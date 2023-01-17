@@ -1,0 +1,1 @@
+web: gunicorn radappoint.wsgi --log-file -

@@ -1,0 +1,157 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<form class="booking-form">
+<div class="container">
+    <h1 align="center">Appointment Form</h1> <br>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label class="form-label required" for="lname"> Last Name </label>
+            <input type="text" class="form-control lclass" id="lname" name="lname">
+        </div>
+    
+        <div class="form-group col-md-3">
+            <label class="form-label required" for="gname"> Given Name </label>
+            <input type="text" class="form-control" id="gname" name="gname">
+        </div>
+        
+        <div class="form-group col-md-3">
+            <label for="mname"> Middle Name </label>
+            <input type="text" class="form-control" id="mname" name="mname">
+        </div>
+
+      <div class="col">
+        <label class="form-label required" for="sex"> Sex </label>
+        <div class="col-sm-10">
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+              </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label class="form-label required"> Date </label>
+            <div class="input-group date" data-provide="datepicker">
+                <input type="text" class="form-control date-withicon" />
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-1">
+            <label> Age </label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="form-label required"> Email Address </label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+            <label class="form-label required"> Contact Number </label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col">
+            <label class="form-label required"> Requesting Physician </label>
+            <input type="text" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-row">
+          <div class="col">
+            <label class="form-label required"> Select site </label>
+            <div class="col-sm-10">
+              <select class = "selectpicker site">
+                  <option>Philippine General Hospital</option>
+                  <option>Hospital 2</option>
+                  <option>Hospital 3</option>
+              </select>
+            </div>
+          </div>
+
+        <div class="form-group col-md-3">
+            <label class="form-label required"> Preferred Date </label>
+            <div class="input-group date" data-provide="datepicker">
+                <input type="text" class="form-control date-withicon" />
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<br> <hr> <br>
+
+<div class="container">
+    <div class="form-row justify-content-center">
+      <div class="form-group col-md-7">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Examination Type</th>
+            <th scope="col">Procedure</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+                <select> 
+                    <option> X-ray </option>
+                    <option> Ultrasound </option>
+                    <option> MRI </option>
+                    <option> CT Scan </option>
+                </select>
+            </th>
+            <td> 
+              <select> 
+                <option> Abdomen X-ray (Infants) Complete </option>
+                <option> Abdomen X-ray Pediatric </option>
+                <option> Acromeo-clavicular Joint X-ray </option>
+                <option> Ankle X-ray </option>
+              </select> 
+            </td>
+            <td> Php 200.00</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Total Amount</td>
+            <td>Php 200.00</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="col">
+        <button type="button" class="btn btn-secondary"> + Add </button>
+        <button type="button" class="btn btn-secondary"> - Remove </button>
+      </div>
+  
+</div>
+</div>
+
+<br> <br>
+
+<div class="container upload">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+    <label class="form-label required" id="upload"> Upload Doctor's Request </label>
+    <input type="file" id="file1" name="upload">
+    </div>
+  </div>
+</div>
+
+<br> <br>
+<div class="container">
+  <button type="button" class="btn btn-secondary" onclick="formSubmit()"> Submit </button>
+</div>
+{% endblock content %}
+

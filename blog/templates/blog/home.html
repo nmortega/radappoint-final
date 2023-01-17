@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h1>List of Patients</h1>
+
+
+        <div>
+            <form action="" method="get">
+                <input type="text" name="search" value="{{ request.GET.search }}">
+                <button type="submit">Search</button>
+            </form>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Procedure</th>
+                        <th>Date</th>
+                        <th>Exam</th>
+                        <th>Radiologist</th>
+                        <th>Radiologic Technologist</th>
+                    </tr>
+                </thead>
+
+            
+            {% for obj in posts %}
+            <tr>
+                <td> <a href="{% url 'post-detail' obj.id %}">{{obj.last_name}}, {{obj.first_name}}</a></td>
+                <td>{{obj.procedure}}</td>
+                <td>{{obj.preferred_date}}</td>
+                <td>{{obj.exam_type}}</td>
+                <td>{{obj.radiologist_name}}</td>
+                <td>{{obj.radtech_name}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+        </div>
+   
+    
+{% endblock content %}
+

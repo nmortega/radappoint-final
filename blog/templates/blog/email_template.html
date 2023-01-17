@@ -1,0 +1,35 @@
+<h2>Appointment Details</h2>
+<p>
+Dear Patient {{ first_name }} {{ last_name }}, <br>
+
+Greetings of good health!
+
+Thank you for booking your appointment with ABC Hospital Radiology Department. Please see your appointment details below:
+
+</b>
+<p><b>Date of Appointment: </b><br> {{ preferred_date }} </p>
+<p><b>Name: </b><br> {{ first_name }} {{ last_name }} </p>
+<p><b>Hospital Branch: </b><br> {{ hospital_site }} </p>
+<p><b>Exam Type: </b><br> {{ exam_type }} </p>
+<p><b>Procedure: <br></b> {{ procedure }} </p>
+{% if procedure == 'Procedure 1' %}
+    <p> Fast at least 6 hours prior to the procedure (no food intake). </p>
+{% elif procedure == 'Procedure 2' %}
+    <p> No preparations needed. </p>
+{% else %}
+    <p></p>
+{% endif %}
+<p><b>Status: <br></b> {{ status }} </p>
+{% if status == 'Confirmed' %}
+    <p>Your apointment is confirmed. Kindly go to the radiology department on the date provided above. </p>
+{% elif status == 'Booked' %}
+    <p>Your appointment is yet to be confirmed. Kindly wait for the hospital staff to confirm your appointment. An email will be sent once confirmed.</p>
+{% else %}
+    <p></p>
+{% endif %}
+
+
+
+
+
+

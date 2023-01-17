@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                </div>
+          </div>
+            <div class="content-section">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <h2 class="article-title">{{ object.last_name }}, {{ object.first_name }}</h2>
+                        <p><b>Name: </b><br> {{ object.first_name }} {{object.middle_name}} {{ object.last_name }} </p>
+                        <p><b>Sex: <br></b> {{ object.sex }} </p>
+                        <p><b>Date of Birth: <br></b> {{ object.date_of_birth }} </p>
+                        <p><b>Email address: <br></b> {{ object.email_address }} </p>
+                        <p><b>Contact Number: <br></b> {{ object.contact_number }} </p>
+                        <p><b>Requesting Physician: <br></b> {{ object.requesting_physician }} </p>
+                        <p><b>Hospital Branch: <br></b> {{ object.hospital_site }} </p>
+                        <p><b>Date of Appointment: <br></b> {{ object.preferred_date }} </p>
+                        <p><b>Radiologist: </b><br> {{ object.radiologist_name }} </p>
+                        <p><b>Radiologic Technologist: </b><br> {{ object.radtech_name }} </p>
+                        <p><b>Examination Type: </b><br> {{ object.exam_type }} </p>
+                        <p><b>Procedure: <br></b> {{ object.procedure }} </p>
+                        <p><b>Status: <br></b> {{ object.status }} </p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </article>
+{% endblock content %}
