@@ -26,7 +26,6 @@ SECRET_KEY = 'exhlfdat&vfum(-34*c2uroi(($ww(yo$9pv98=e6p^gl(-eoj'
 DEBUG = False
 
 CSRF_TRUSTED_ORIGINS = ['https://web-production-0a18.up.railway.app']
-CORS_ALLOWED_ORIGINS = ['https://web-production-0a18.up.railway.app']
 
 ALLOWED_HOSTS = ["*"]
 
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
