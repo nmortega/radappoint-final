@@ -25,7 +25,7 @@ SECRET_KEY = 'exhlfdat&vfum(-34*c2uroi(($ww(yo$9pv98=e6p^gl(-eoj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = ['https://web-production-0a18.up.railway.app/']
+    CSRF_TRUSTED_ORIGINS = ['https://web-production-0a18.up.railway.app']
 
 ALLOWED_HOSTS = ["*"]
 
