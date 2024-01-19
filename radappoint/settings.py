@@ -137,3 +137,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+CSRF_TRUSTED_ORIGINS = ['https://web-production-0a18.up.railway.app/']
