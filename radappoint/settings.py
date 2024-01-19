@@ -23,7 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'exhlfdat&vfum(-34*c2uroi(($ww(yo$9pv98=e6p^gl(-eoj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['https://web-production-0a18.up.railway.app/']
 
 ALLOWED_HOSTS = ["*"]
 
@@ -137,4 +139,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
-CSRF_TRUSTED_ORIGINS = ['https://web-production-0a18.up.railway.app/']
+
