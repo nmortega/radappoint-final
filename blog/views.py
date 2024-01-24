@@ -55,7 +55,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['last_name', 'first_name', 'middle_name', 'sex', 'date_of_birth', 
     'email_address', 'contact_number', 'requesting_physician', 'hospital_site', 
     'preferred_date', 'doctors_request', 
-    'exam_type', 'procedure']
+    'exam_type', 'procedure', 'status']
+    exclude = ['status']
 
     def form_valid(self, form):
         last_name = form.cleaned_data['last_name']
@@ -67,7 +68,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         preferred_date = form.cleaned_data['preferred_date']
 
         procedure = form.cleaned_data['procedure']
-        # status = form.cleaned_data['status']
+        status = form.cleaned_data['status']
 
         email_from = settings.EMAIL_HOST_USER
 
@@ -79,7 +80,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
             'exam_type': exam_type,
             'procedure': procedure,
             'preferred_date': preferred_date,
-            # 'status': status
+            'status': status
         })
 
         send_mail('Appointment Details', 'This is the message', email_from, email, html_message=html)
