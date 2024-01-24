@@ -55,7 +55,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['last_name', 'first_name', 'middle_name', 'sex', 'date_of_birth', 
     'email_address', 'contact_number', 'requesting_physician', 'hospital_site', 
     'preferred_date', 'doctors_request', 
-    'exam_type', 'procedure']
+    'exam_type', 'procedure', 'status']
 
     def form_valid(self, form):
         last_name = form.cleaned_data['last_name']
